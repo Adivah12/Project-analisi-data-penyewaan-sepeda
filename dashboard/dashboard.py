@@ -58,7 +58,7 @@ max_date_hours = hour_df["dteday"].max()
 
 with st.sidebar:
     # Logo 
-    st.image("gambar sewa sepeda.jpg")
+    st.image("dashboard/gambar sewa sepeda.jpg")
 
     # Mengambil rentang tanggal
     start_date, end_date = st.date_input(
@@ -80,7 +80,7 @@ total_count_by_registered = create_total_count_by_registered(main_df_day)
 total_count_by_season = create_total_count_by_season(main_df_day)
 
 # Melengkapi bagian dashboard
-st.header("dashboard/Analisis Data Penyewaan Sepeda")
+st.header("Analisis Data Penyewaan Sepeda")
 
 # Total penyewaan
 st.subheader("Total penyewaan sepeda")
