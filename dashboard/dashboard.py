@@ -80,7 +80,7 @@ total_count_by_registered = create_total_count_by_registered(main_df_day)
 total_count_by_season = create_total_count_by_season(main_df_day)
 
 # Melengkapi bagian dashboard
-st.header("Analisis Data Penyewaan Sepeda")
+st.header("dashboard/Analisis Data Penyewaan Sepeda")
 
 # Total penyewaan
 st.subheader("Total penyewaan sepeda")
