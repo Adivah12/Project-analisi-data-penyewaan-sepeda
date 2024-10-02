@@ -30,8 +30,8 @@ def create_total_count_by_season(day_df):
 
 
 # Load data
-hour_df = pd.read_csv("dashboard/hour.csv")
-day_df = pd.read_csv("dashboard/day.csv")
+hour_df = pd.read_csv("hour.csv")
+day_df = pd.read_csv("day.csv")
 
 # Mengubah tipe data integer menjadi kategori
 columns_to_convert = ['season', 'mnth', 'holiday', 'weekday', 'weathersit']
@@ -58,7 +58,7 @@ max_date_hours = hour_df["dteday"].max()
 
 with st.sidebar:
     # Logo 
-    st.image("dashboard/gambar sewa sepeda.jpg")
+    st.image("gambar sewa sepeda.jpg")
 
     # Mengambil rentang tanggal
     start_date, end_date = st.date_input(
@@ -117,6 +117,23 @@ ax.tick_params(axis='y', labelsize=14)
 ax.tick_params(axis='x', labelsize=14, rotation=45)
 
 st.pyplot(fig)
+
+# Visualisasi heatmap kondisi cuaca (suhu, kelembaban, kecepatan angin) memengaruhi jumlah penyewaan sepeda
+st.subheader("Kondisi Cuaca Mempengaruhi Penyewaan Sepeda")
+
+# Mengambil data untuk heatmap
+weather_columns = ["cnt", "temp", "hum", "windspeed", 'weathersit']
+weather_data = main_df_day[weather_columns]
+
+# Membuat heatmap dengan seaborn
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(weather_data.corr(), annot=True, cmap="coolwarm", ax=ax)
+
+ax.set_title("Korelasi Antara Kondisi Cuaca dan Jumlah Penyewaan Sepeda", fontsize=16)
+
+# Menampilkan heatmap di Streamlit
+st.pyplot(fig)
+
 
 # Visualisasi penyewaan sepeda berdasarkan jam
 st.subheader("Penyewaan Sepeda Berdasarkan Jam")
