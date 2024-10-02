@@ -170,6 +170,8 @@ ax.set_title("Persentase Penyewaan Sepeda Berdasarkan Musim", fontsize=16)
 # Menampilkan pie chart di Streamlit
 st.pyplot(fig)
 
+st.text("Pada heat map  diatas hubungan antara penyewaan sepeda berdasarkan harian dengan kondisi suhu dan kondisi cuaca yang buruk berpengaruh dengan kegiatan penyewaan sepeda, jika keadaan suhu meningkat maka jumlah penyewa sepeda juga meningkat dan jika kondisi cuaca buruk maka jumlah penyewaan sepeda juga menurun sedangkan hubungan antara kelembapan dan kecepatan angin memiliki hubungan yang lemah dengan jumlah penyewaaan sepeda jadi  tidak terlalu berpengaruh.")
+
 # Membuat pie chart untuk perbandingan pengguna casual dan registered
 st.subheader("Perbandingan Penyewaan: Casual vs Registered")
 
