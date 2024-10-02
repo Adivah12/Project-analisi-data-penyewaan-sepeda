@@ -30,8 +30,8 @@ def create_total_count_by_season(day_df):
 
 
 # Load data
-hour_df = pd.read_csv("hour.csv")
-day_df = pd.read_csv("day.csv")
+hour_df = pd.read_csv("dashboard/hour.csv")
+day_df = pd.read_csv("dashboard/day.csv")
 
 # Mengubah tipe data integer menjadi kategori
 columns_to_convert = ['season', 'mnth', 'holiday', 'weekday', 'weathersit']
@@ -58,7 +58,7 @@ max_date_hours = hour_df["dteday"].max()
 
 with st.sidebar:
     # Logo 
-    st.image("gambar sewa sepeda.jpg")
+    st.image("dashboard/gambar sewa sepeda.jpg")
 
     # Mengambil rentang tanggal
     start_date, end_date = st.date_input(
